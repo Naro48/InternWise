@@ -28,6 +28,6 @@ public class PromotionEntity implements Serializable {
     private Integer numProf;
 
     @ManyToOne
-    @JoinColumn(name = "numProf", referencedColumnName = "numProf", insertable = false)
+    @JoinColumn(name = "numProf", referencedColumnName = "numProf", insertable = false,updatable = false)
     private ProfEntity professeur;
 }
