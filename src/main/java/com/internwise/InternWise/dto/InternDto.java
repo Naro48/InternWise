@@ -17,5 +17,10 @@ public class InternDto{
     private Date dateFin;
     private String statutStage;
     private String compteRendu;
+    private int numTuteur;
+    private int numEtudiant;
+    private int numEntreprise;
+    private int numProf;
+    private int codeTypeStage;
 
 }

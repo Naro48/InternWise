@@ -14,7 +14,7 @@ public interface InternRepo extends JpaRepository<InternEntity,Integer> {
 
     public List<InternEntity> findByEtudiant(EtudiantEntity etudiant);
 
-    public List<InternEntity> findByEtudiantA
+    public List<InternEntity> findByEtudiantAndYear(EtudiantEntity etudiant,int year);
 
     public List<InternEntity> findByStatutStage(String statut);
 
