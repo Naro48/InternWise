@@ -1,5 +1,6 @@
 package com.internwise.InternWise.Repositories;
 
+import com.internwise.InternWise.Entities.EtudiantEntity;
 import com.internwise.InternWise.Entities.InternEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -9,15 +10,13 @@ public interface InternRepo extends JpaRepository<InternEntity,Integer> {
 
     public InternEntity findById();
 
-    public InternEntity findByYear();
+    public List<InternEntity> findByYear(int year);
 
-    public List<InternEntity> findAllByStatutStage();
+    public List<InternEntity> findByEtudiant(EtudiantEntity etudiant);
 
+    public List<InternEntity> findByEtudiantA
 
-
-
-
-
+    public List<InternEntity> findByStatutStage(String statut);
 
 
 }

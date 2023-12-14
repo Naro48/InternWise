@@ -2,10 +2,11 @@ package com.internwise.InternWise.Service;
 
 import com.internwise.InternWise.Entities.InternEntity;
 import com.internwise.InternWise.Repositories.InternRepo;
+import com.internwise.InternWise.dto.InternDto;
 import org.springframework.stereotype.Service;
 
 @Service
-public class InternService {
+public class InternService implements InternServiceInt{
 
     private final InternRepo internRepo;
 
@@ -23,4 +24,18 @@ public class InternService {
     }
 
 
+    @Override
+    public InternEntity createIntern(InternDto internDto) {
+        return null;
+    }
+
+    @Override
+    public InternEntity modifyIntern(InternDto internModified) {
+        return null;
+    }
+
+    @Override
+    public void deleteIntern(int id) {
+
+    }
 }
