@@ -15,10 +15,10 @@ import java.io.Serializable;
 public class TypeStageEntity implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "codeTypeStage")
     private Integer codeTypeStage;
 
     @Column(name = "nbrSemaines")
     private Integer nbrSemaines;
 }
+

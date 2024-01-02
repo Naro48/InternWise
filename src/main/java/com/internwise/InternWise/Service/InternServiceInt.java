@@ -8,9 +8,9 @@ import java.util.List;
 
 public interface InternServiceInt {
 
-    public InternEntity createIntern(InternDto internDto);
+    public InternEntity createIntern(InternEntity intern);
 
-    public InternEntity modifyIntern(InternDto internModified);
+    public InternEntity modifyIntern(InternEntity internModified);
 
     public void deleteIntern(int id);
 

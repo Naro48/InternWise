@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface InternRepo extends JpaRepository<InternEntity,Integer> {
 
-    public InternEntity findById();
+    public InternEntity findById(int id);
 
     public List<InternEntity> findByYear(int year);
 

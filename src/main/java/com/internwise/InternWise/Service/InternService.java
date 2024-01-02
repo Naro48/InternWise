@@ -2,6 +2,7 @@ package com.internwise.InternWise.Service;
 
 import com.internwise.InternWise.Entities.EtudiantEntity;
 import com.internwise.InternWise.Entities.InternEntity;
+import com.internwise.InternWise.Exceptions.EntityNotFoundException;
 import com.internwise.InternWise.Repositories.InternRepo;
 import com.internwise.InternWise.dto.InternDto;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,10 @@ public class InternService implements InternServiceInt{
         createdIntern.setYear(intern.getYear());
         createdIntern.setDateDebut(intern.getDateDebut());
         createdIntern.setDateFin(intern.getDateFin());
+        createdIntern.setProfesseur(intern.getProfesseur());
+        createdIntern.setEntreprise(intern.getEntreprise());
+        createdIntern.setTuteur(intern.getTuteur());
+        createdIntern.setTypeStage(intern.getTypeStage());
 
 
 
@@ -32,38 +37,38 @@ public class InternService implements InternServiceInt{
     }
 
 
-    @Override
-    public InternEntity createIntern(InternDto internDto) {
-        return null;
-    }
 
     @Override
-    public InternEntity modifyIntern(InternDto internModified) {
-        return null;
+    public InternEntity modifyIntern(InternEntity internModified) {
+        return internRepo.save(internModified) ;
     }
 
     @Override
     public void deleteIntern(int id) {
-
+         internRepo.deleteById(id);
     }
 
     @Override
     public InternEntity findById(int id) {
-        return null;
+        return internRepo
+                .findById(id);
+
+
     }
 
     @Override
     public List<InternEntity> findByYear(int year) {
-        return null;
+
+        return internRepo.findByYear(year);
     }
 
     @Override
     public List<InternEntity> findByEtudiant(EtudiantEntity etudiant) {
-        return null;
+        return internRepo.findByEtudiant(etudiant);
     }
 
     @Override
     public List<InternEntity> findByEtudiantAndYear(EtudiantEntity etudiant, int year) {
-        return null;
+        return internRepo.findByEtudiantAndYear(etudiant,year);
     }
 }
