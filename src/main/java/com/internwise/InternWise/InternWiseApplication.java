@@ -10,4 +10,5 @@ public class InternWiseApplication {
 		SpringApplication.run(InternWiseApplication.class, args);
 	}
 
+
 }

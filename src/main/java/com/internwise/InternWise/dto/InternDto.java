@@ -9,7 +9,7 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class InternDto{
+public class InternDto implements Serializable{
 
     private int id;
     private Integer year;
