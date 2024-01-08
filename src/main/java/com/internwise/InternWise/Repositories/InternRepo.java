@@ -19,4 +19,6 @@ public interface InternRepo extends JpaRepository<InternEntity,Integer> {
     public List<InternEntity> findByStatutStage(String statut);
 
 
+
+
 }

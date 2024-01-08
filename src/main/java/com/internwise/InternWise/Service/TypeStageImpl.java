@@ -25,6 +25,6 @@ public class TypeStageImpl implements TypeStageInt{
     public Integer getNbrSemaines(Integer code) {
         TypeStageEntity typeStage = typeStageRepo.findByCodeTypeStage(code);
 
-        return typeStageRepo.getNbrSemaines(typeStage);
+        return typeStage.getNbrSemaines();
     }
 }
