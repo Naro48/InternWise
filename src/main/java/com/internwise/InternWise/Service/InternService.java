@@ -29,17 +29,23 @@ public class InternService implements InternServiceInt{
         createdIntern.setEntreprise(intern.getEntreprise());
         createdIntern.setTuteur(intern.getTuteur());
         createdIntern.setTypeStage(intern.getTypeStage());
-
-
-
-
         return internRepo.save(createdIntern);
     }
 
 
 
     @Override
-    public InternEntity modifyIntern(InternEntity internModified) {
+    public InternEntity modifyIntern(InternEntity internModified, int id) {
+        InternEntity intern = internRepo.findById(id);
+
+        intern.setYear(internModified.getYear());
+        intern.setDateDebut(internModified.getDateDebut());
+        intern.setDateFin(internModified.getDateFin());
+        intern.setTuteur(internModified.getTuteur());
+        intern.setProfesseur(internModified.getProfesseur());
+        intern.setCompteRendu(internModified.getCompteRendu());
+        intern.setTypeStage(internModified.getTypeStage());
+
         return internRepo.save(internModified) ;
     }
 

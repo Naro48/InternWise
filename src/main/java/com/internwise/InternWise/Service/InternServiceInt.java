@@ -10,7 +10,7 @@ public interface InternServiceInt {
 
     public InternEntity createIntern(InternEntity intern);
 
-    public InternEntity modifyIntern(InternEntity internModified);
+    public InternEntity modifyIntern(InternEntity internModified,int id);
 
     public void deleteIntern(int id);
 

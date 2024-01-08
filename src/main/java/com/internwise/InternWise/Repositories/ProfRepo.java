@@ -10,5 +10,4 @@ public interface ProfRepo extends JpaRepository<ProfEntity,Integer> {
     public ProfEntity findByPromotion(PromotionEntity promotion);
 
 
-
 }
