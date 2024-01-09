@@ -11,5 +11,5 @@ public interface TuteurInt {
 
     public void deleteById(int id);
 
-    public List<TuteurEntity> searchByName(String name );
+    /*public List<TuteurEntity> searchByName(String name );*/
 }

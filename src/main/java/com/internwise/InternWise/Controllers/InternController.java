@@ -6,6 +6,7 @@ import com.internwise.InternWise.Service.InternService;
 import com.internwise.InternWise.dto.InternDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,7 +22,7 @@ public class InternController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<InternEntity> createIntern(@RequestBody InternEntity intern) {
+    public ResponseEntity<InternEntity> createIntern(@RequestBody InternDto intern) {
         InternEntity createdIntern = internService.createIntern(intern);
         return new ResponseEntity<>(createdIntern, HttpStatus.CREATED);
     }
@@ -61,4 +62,19 @@ public class InternController {
         List<InternEntity> interns = internService.findByEtudiantAndYear(etudiant, year);
         return new ResponseEntity<>(interns, HttpStatus.OK);
     }
+
+    @PostMapping("/end/{id}")
+    public ResponseEntity<String> endIntern(@PathVariable int id){
+        internService.endIntern(id);
+
+        return new ResponseEntity<>("le stage a terminé", HttpStatus.OK);
+    }
+
+    @PostMapping("/start/{id}")
+    public ResponseEntity<String> startIntern(@PathVariable int id){
+        internService.startIntern(id);
+
+        return new ResponseEntity<>("le stage a commencé", HttpStatus.OK);
+    }
+
 }

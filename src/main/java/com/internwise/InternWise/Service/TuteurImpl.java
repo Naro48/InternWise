@@ -26,8 +26,8 @@ public class TuteurImpl implements TuteurInt {
         tuteurRepo.deleteById(id);
     }
 
-    @Override
+    /*@Override
     public List<TuteurEntity> searchByName(String name) {
         return tuteurRepo.searchByName(name);
-    }
+    }*/
 }

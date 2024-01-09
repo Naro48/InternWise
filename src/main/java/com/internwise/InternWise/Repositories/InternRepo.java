@@ -21,4 +21,6 @@ public interface InternRepo extends JpaRepository<InternEntity,Integer> {
 
 
 
+
+
 }

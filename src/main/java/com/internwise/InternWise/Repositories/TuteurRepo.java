@@ -11,12 +11,12 @@ import java.util.List;
 @Repository
 public interface TuteurRepo extends JpaRepository<TuteurEntity, Integer> {
 
-    @Query("SELECT p FROM Tuteur p WHERE p.Nom LIKE %:name%")
+    /*@Query("SELECT p FROM Tuteur p WHERE p.Nom LIKE %:name%")
     List<TuteurEntity> searchByName(@Param("name") String name);
 
 
 
 
-
+*/
 
 }

@@ -2,8 +2,9 @@ package com.internwise.InternWise.Service;
 
 import com.internwise.InternWise.Entities.EtudiantEntity;
 import com.internwise.InternWise.Entities.InternEntity;
-import com.internwise.InternWise.Exceptions.EntityNotFoundException;
 import com.internwise.InternWise.Repositories.InternRepo;
+import com.internwise.InternWise.Repositories.TypeStageRepo;
+import com.internwise.InternWise.StatutStage;
 import com.internwise.InternWise.dto.InternDto;
 import org.springframework.stereotype.Service;
 
@@ -13,22 +14,25 @@ import java.util.List;
 public class InternService implements InternServiceInt{
 
     private final InternRepo internRepo;
+    private final TypeStageRepo typeStageRepo ;
 
 
-    public InternService(InternRepo internRepo) {
+
+
+    public InternService(InternRepo internRepo, TypeStageRepo typeStageRepo) {
         this.internRepo = internRepo;
+        this.typeStageRepo = typeStageRepo;
     }
 
-    public InternEntity createIntern(InternEntity intern){
+    public InternEntity createIntern(InternDto intern){
         InternEntity createdIntern = new InternEntity();
 
         createdIntern.setYear(intern.getYear());
         createdIntern.setDateDebut(intern.getDateDebut());
         createdIntern.setDateFin(intern.getDateFin());
-        createdIntern.setProfesseur(intern.getProfesseur());
-        createdIntern.setEntreprise(intern.getEntreprise());
-        createdIntern.setTuteur(intern.getTuteur());
-        createdIntern.setTypeStage(intern.getTypeStage());
+        createdIntern.setTypeStage(typeStageRepo.findByCodeTypeStage(intern.getCodeTypeStage()) );
+        createdIntern.setStatutStage(StatutStage.Avenir);
+
         return internRepo.save(createdIntern);
     }
 
@@ -45,6 +49,8 @@ public class InternService implements InternServiceInt{
         intern.setProfesseur(internModified.getProfesseur());
         intern.setCompteRendu(internModified.getCompteRendu());
         intern.setTypeStage(internModified.getTypeStage());
+
+
 
         return internRepo.save(internModified) ;
     }
@@ -76,5 +82,17 @@ public class InternService implements InternServiceInt{
     @Override
     public List<InternEntity> findByEtudiantAndYear(EtudiantEntity etudiant, int year) {
         return internRepo.findByEtudiantAndYear(etudiant,year);
+    }
+
+    @Override
+    public void endIntern(int id) {
+        InternEntity intern = internRepo.findById(id);
+        intern.setStatutStage(StatutStage.Termine);
+    }
+
+    @Override
+    public void startIntern(int id) {
+        InternEntity intern = internRepo.findById(id);
+        intern.setStatutStage(StatutStage.Encours);
     }
 }

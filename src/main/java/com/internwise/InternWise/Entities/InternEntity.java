@@ -32,29 +32,32 @@ public class InternEntity implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date dateFin;
 
+
     @Column(nullable = false, name = "StatutSTage")
-    private String statutStage;
+    @Enumerated(EnumType.STRING)
+    private StatutStage statutStage;
 
     @Column(name = "compteRendu")
     private String compteRendu;
 
     @ManyToOne
-    @JoinColumn(name = "numTuteur", nullable = false)
+    @JoinColumn(name = "numTuteur")
     private TuteurEntity tuteur;
 
     @ManyToOne
-    @JoinColumn(name = "numEtudiant", nullable = false)
+    @JoinColumn(name = "numEtudiant")
     private EtudiantEntity etudiant;
 
     @ManyToOne
-    @JoinColumn(name = "numEntreprise", nullable = false)
+    @JoinColumn(name = "numEntreprise")
     private EntrepriseEntity entreprise;
 
     @ManyToOne
-    @JoinColumn(name = "numProf", nullable = false)
+    @JoinColumn(name = "numProf")
     private ProfEntity professeur;
 
     @ManyToOne
     @JoinColumn(name = "codeTypeStage", nullable = false)
     private TypeStageEntity typeStage;
+
 }

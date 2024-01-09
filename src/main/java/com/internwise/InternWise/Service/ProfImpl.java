@@ -27,10 +27,6 @@ public class ProfImpl implements ProfInt{
     @Override
     public ProfEntity updateProf(ProfEntity modifiedProf, int id) {
         ProfEntity prof = profRepo.findById(id);
-
-
-
-
         return profRepo.save(prof);
     }
 

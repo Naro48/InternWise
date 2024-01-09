@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface InternServiceInt {
 
-    public InternEntity createIntern(InternEntity intern);
+    public InternEntity createIntern(InternDto intern);
 
     public InternEntity modifyIntern(InternEntity internModified,int id);
 
@@ -21,6 +21,10 @@ public interface InternServiceInt {
     public List<InternEntity> findByEtudiant(EtudiantEntity etudiant);
 
     public List<InternEntity> findByEtudiantAndYear(EtudiantEntity etudiant,int year);
+
+    public void endIntern(int id);
+
+    public void startIntern(int id);
 
 
 
