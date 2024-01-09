@@ -8,7 +8,6 @@ public interface TypeStageInt {
 
     public Integer getNbrSemaines(Integer code);
 
-    public void saveTypeStageEntities();
 
 
 

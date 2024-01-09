@@ -8,7 +8,7 @@ public interface ProfInt {
 
     public ProfEntity addProf(ProfEntity prof);
 
-    public ProfEntity updateProf(ProfEntity prof);
+    public ProfEntity updateProf(ProfEntity prof, int id);
 
     public void deleteProf(int id);
 

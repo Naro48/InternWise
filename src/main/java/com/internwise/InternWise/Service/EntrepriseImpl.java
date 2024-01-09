@@ -2,7 +2,9 @@ package com.internwise.InternWise.Service;
 
 import com.internwise.InternWise.Entities.EntrepriseEntity;
 import com.internwise.InternWise.Repositories.EntrepriseRepo;
+import org.springframework.stereotype.Service;
 
+@Service
 public class EntrepriseImpl implements EntrepriseInt{
 
 
@@ -18,7 +20,13 @@ public class EntrepriseImpl implements EntrepriseInt{
     }
 
     @Override
-    public EntrepriseEntity updateEntreprise(EntrepriseEntity ent) {
+    public EntrepriseEntity updateEntreprise(EntrepriseEntity modifiedEnt, int id) {
+        EntrepriseEntity ent = entrepriseRepo.findById(id);
+        ent.setAdresseEntreprise(modifiedEnt.getAdresseEntreprise());
+        ent.setNomEntreprise(modifiedEnt.getNomEntreprise());
+        ent.setFormeJuridique(modifiedEnt.getFormeJuridique());
+        ent.setRaisonSociale(modifiedEnt.getFormeJuridique());
+        ent.setNumTelStandard(modifiedEnt.getNumTelStandard());
         return entrepriseRepo.save(ent);
     }
 

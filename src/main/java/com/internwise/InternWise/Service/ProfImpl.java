@@ -3,7 +3,9 @@ package com.internwise.InternWise.Service;
 import com.internwise.InternWise.Entities.ProfEntity;
 import com.internwise.InternWise.Entities.PromotionEntity;
 import com.internwise.InternWise.Repositories.ProfRepo;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ProfImpl implements ProfInt{
 
     private final ProfRepo profRepo;
@@ -23,7 +25,12 @@ public class ProfImpl implements ProfInt{
     }
 
     @Override
-    public ProfEntity updateProf(ProfEntity prof) {
+    public ProfEntity updateProf(ProfEntity modifiedProf, int id) {
+        ProfEntity prof = profRepo.findById(id);
+
+
+
+
         return profRepo.save(prof);
     }
 

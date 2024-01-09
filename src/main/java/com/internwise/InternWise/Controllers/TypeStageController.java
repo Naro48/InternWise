@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/typestage")
+@RequestMapping("/api/typestage")
 public class TypeStageController {
     private final TypeStageImpl typeStage;
 

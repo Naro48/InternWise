@@ -2,9 +2,10 @@ package com.internwise.InternWise.Service;
 
 import com.internwise.InternWise.Entities.EtudiantEntity;
 import com.internwise.InternWise.Repositories.EtudiantRepo;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class EtudiantImpl implements EtudiantInt{
 
     private final EtudiantRepo etudiantRepo;
