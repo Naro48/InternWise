@@ -38,6 +38,6 @@ public class AuthenticationService {
         );
 
         return userRepository.findByEmail(input.getEmail())
-                .orElseThrow();
+                .orElseThrow(() -> new RuntimeException("User introuvable"));
     }
 }

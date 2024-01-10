@@ -2,6 +2,7 @@ package com.internwise.InternWise.Controllers;
 
 import com.internwise.InternWise.Entities.EntrepriseEntity;
 import com.internwise.InternWise.Service.EntrepriseImpl;
+import com.internwise.InternWise.dto.EntrepriseDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +18,7 @@ public class EntrepriseController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<EntrepriseEntity> addEntreprise(@RequestBody EntrepriseEntity entrepriseEntity) {
+    public ResponseEntity<EntrepriseEntity> addEntreprise(@RequestBody EntrepriseDto entrepriseEntity) {
         EntrepriseEntity newEntreprise = entrepriseService.addEntreprise(entrepriseEntity);
         return new ResponseEntity<>(newEntreprise, HttpStatus.CREATED);
     }
