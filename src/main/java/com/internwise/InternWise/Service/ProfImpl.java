@@ -38,7 +38,13 @@ public class ProfImpl implements ProfInt{
         pr.setTelephoneInstitutionnel(prof.getTelephoneInstitutionnel());
         pr.setTelephonePersonnel(prof.getTelephonePersonnel());
         pr.setDateEmbauche(prof.getDateEmbauche());
-        pr.setPromotion(promotionRepository.findById(prof.getPromotion()).orElseThrow(() -> new RuntimeException("Promotion Introuvable")));
+        PromotionEntity promo = promotionRepository.findById(prof.getPromotion()).orElseThrow(() -> new RuntimeException("Promotion Introuvable"));
+        pr.setPromotion(promo);
+        profRepo.save(pr);
+        promo.setNumProf(pr.getNumProf());
+        promotionRepository.save(promo);
+
+
         return profRepo.save(pr);
     }
 

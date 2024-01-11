@@ -20,8 +20,6 @@ public class ProfDto {
 
     private Date dateEmbauche;
 
-    private Date dateDepart;
-
     private String telephonePersonnel;
 
     private String telephoneInstitutionnel;

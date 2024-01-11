@@ -35,7 +35,7 @@ public class ProfEntity implements Serializable {
     @Column(name = "DateEmbauche")
     private Date dateEmbauche;
 
-    @Column(name = "DateDepart", nullable = false)
+    @Column(name = "DateDepart", nullable = true)
     private Date dateDepart;
 
     @Column(name = "TelephonePersonnel", nullable = false)
