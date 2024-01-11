@@ -26,7 +26,7 @@ export class LoginComponent {
 
 
       const Url = AppConfig.apiUrl;
-      const endpoint = `${Url}/auth/authenticate`;
+      const endpoint = `${Url}/auth/login`;
     
       
       const data = {

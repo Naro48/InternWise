@@ -14,6 +14,7 @@ import java.util.List;
 
 @RequestMapping("/auth")
 @RestController
+@CrossOrigin("http://localhost:4200/")
 public class AuthenticationController {
     private final JwtService jwtService;
 
