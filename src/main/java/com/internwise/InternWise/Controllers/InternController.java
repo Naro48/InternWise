@@ -6,7 +6,6 @@ import com.internwise.InternWise.Service.InternService;
 import com.internwise.InternWise.dto.InternDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,7 +28,7 @@ public class InternController {
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<InternEntity> modifyIntern(@RequestBody InternEntity intern,@PathVariable int id) {
+    public ResponseEntity<InternEntity> modifyIntern(@RequestBody InternEntity intern, @PathVariable int id) {
         InternEntity modifiedIntern = internService.modifyIntern(intern, id);
         return new ResponseEntity<>(modifiedIntern, HttpStatus.OK);
     }
@@ -65,22 +64,22 @@ public class InternController {
     }
 
     @PostMapping("/end/{id}")
-    public ResponseEntity<String> endIntern(@PathVariable int id){
+    public ResponseEntity<String> endIntern(@PathVariable int id) {
         internService.endIntern(id);
 
         return new ResponseEntity<>("le stage a terminé", HttpStatus.OK);
     }
 
     @PostMapping("/start/{id}")
-    public ResponseEntity<String> startIntern(@PathVariable int id){
+    public ResponseEntity<String> startIntern(@PathVariable int id) {
         internService.startIntern(id);
 
         return new ResponseEntity<>("le stage a commencé", HttpStatus.OK);
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<InternEntity>> findAll(){
-        return new ResponseEntity<>(internService.findAll(),HttpStatus.OK);
+    public ResponseEntity<List<InternEntity>> findAll() {
+        return new ResponseEntity<>(internService.findAll(), HttpStatus.OK);
     }
 
 }
