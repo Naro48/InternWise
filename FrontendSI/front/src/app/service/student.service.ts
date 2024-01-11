@@ -8,14 +8,24 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class StudentService {
+  createStudent(formData: Student) {
+    throw new Error('Method not implemented.');
+  }
 
   private apiServerUrl = 'http://localhost:8080' ;
 
   constructor(private http: HttpClient) { }
 
   public getStudent(): Observable<Student[]>{
-    return this.http.get<Student[]>(`${this.apiServerUrl}/api/etudiant`)
+    return this.http.get<Student[]>(`${this.apiServerUrl}/api/etudiant/all`)
   }
+
+
+  getStudentByID(id: number): Observable<Student> {
+    const endpoint = `${this.apiServerUrl}/projets/find/${id}`;
+    return this.http.get<Student>(endpoint);
+  }
+
 
   public addStudent(student: Student): Observable<Student>{
     return this.http.post<Student>(`${this.apiServerUrl}/student/add`,student)

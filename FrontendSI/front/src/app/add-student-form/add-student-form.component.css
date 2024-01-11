@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+.main-container {
+    display: flex;
+    .side-nav {
+      width: 350px;
+      min-width: 230px;
+      min-height: calc(100vh - 70px);
+      background-color: #113c60;
+      color: #fff;
+      box-shadow: 5px 5px 5px #939393;
+      @media only screen and (max-width: 1300px) {
+        width: 100px;
+        min-width: 100px;
+      }
+    }
+    .main {
+      padding: 30px;
+    }
+  }
+  div {
+    .titre {
+      font-size: 24px; /* Adjust the font size as needed */
+      font-weight: bold;
+      font-family: 'Arial', sans-serif; /* Replace with your desired font family */
+    }
+  }
+  .student {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 40px; /* Move the content to the bottom */
+  }
+  .add-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff; /* Replace with your desired background color */
+    color: #fff; /* Replace with your desired text color */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #0056b3; /* Replace with your desired hover background color */
+    }
+  
+    .icon {
+      font-size: 24px;
+      margin-right: 10px; /* Adjust the margin as needed to control the space between the icon and text */
+    }
+  }
+  .container_ok {
+    text-align: center;
+  
+    header {
+      font-size: 2.5rem; /* Adjust the font size as needed */
+      font-weight: bold;
+      font-family: Impact, "Helvetica Neue", sans-serif; /* Use Impact font if available, otherwise use "Helvetica Neue", sans-serif */
+      margin-bottom: 20px; /* Optional: Add some margin below the header */
+      position: relative; /* Required for positioning the underline pseudo-element */
+  
+      /* Add underline styles to the first letter of the header */
+      &::first-letter {
+        text-decoration: underline;
+        text-decoration-color: blue;
+      }
+    }
+  }
+  form {
+    font-family: Arial, sans-serif;
+    margin: 20px auto;
+    padding: 300px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: 100%;
+    align-self: center;
+    position: relative;
+    margin-top: 16px;
+    min-height: 490px;
+    background-color: #fff;
+    overflow: hidden;
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+    border-radius: 6px;
+    margin: 0 15px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1)
+  }
+  
+  .title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .input-field {
+    margin-bottom: 20px;
+  }
+  
+  .input-field label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .input-field input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .sumbit {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sumbit i {
+    margin-right: 10px;
+  }
+  
+  .sumbit:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Optional: Add some spacing around the form */
+  form {
+    margin-top: 50px;
+    width: 100%;
+  }
+ 
