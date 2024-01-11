@@ -18,10 +18,10 @@ public class PromotionEntity implements Serializable {
     @Column(name = "AnneePromo")
     private Integer anneePromo;
 
-    @Column(name = "nombreInscrits")
+    @Column(name = "nombreInscrits" , nullable = true)
     private String nombreInscrits;
 
-    @Column(name = "nombreRecus")
+    @Column(name = "nombreRecus" , nullable = true)
     private String nombreRecus;
 
     @Column(name = "numProf")

@@ -2,6 +2,8 @@ package com.internwise.InternWise.Service;
 
 import com.internwise.InternWise.Entities.EtudiantEntity;
 import com.internwise.InternWise.Repositories.EtudiantRepo;
+import com.internwise.InternWise.Repositories.PromotionRepository;
+import com.internwise.InternWise.dto.EtudiantDto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,12 +12,34 @@ public class EtudiantImpl implements EtudiantInt{
 
     private final EtudiantRepo etudiantRepo;
 
-    public EtudiantImpl(EtudiantRepo etudiantRepo) {
+    private final PromotionRepository promotionRepository;
+
+    private final PromoService promoService;
+
+    public EtudiantImpl(EtudiantRepo etudiantRepo, PromotionRepository promotionRepository, PromoService promoService) {
         this.etudiantRepo = etudiantRepo;
+        this.promotionRepository = promotionRepository;
+        this.promoService = promoService;
     }
 
     @Override
-    public EtudiantEntity createEtudiant(EtudiantEntity etudiant) {
+    public EtudiantEntity createEtudiant(EtudiantDto et) {
+        EtudiantEntity etudiant = new EtudiantEntity();
+
+        etudiant.setAdresse(et.getAdresse());
+        etudiant.setNom(et.getNom());
+        etudiant.setPrenom(et.getPrenom());
+        etudiant.setSexe(et.getSexe());
+        etudiant.setDateNaissance(et.getDateNaissance());
+        etudiant.setNumeroTel(et.getNumeroTel());
+        etudiant.setMention("N/A");
+
+        etudiant.setPromotion(promotionRepository.findById(et.getAnneePromo()).orElseThrow(() -> new RuntimeException("Promo Introuvable")));
+        etudiant.setAnneePromo(et.getAnneePromo());
+
+        promoService.updateNbrInscris(et.getAnneePromo());
+
+
         return etudiantRepo.save(etudiant);
     }
 

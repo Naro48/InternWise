@@ -16,6 +16,7 @@ import java.util.Date;
 public class EtudiantEntity implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "numEtudiant")
     private Integer numEtudiant;
 
@@ -38,7 +39,7 @@ public class EtudiantEntity implements Serializable {
     @Column(name = "Tel")
     private String numeroTel;
 
-    @Column(name = "mention", nullable = false)
+    @Column(name = "mention", nullable = true)
     private String mention;
 
     @Column(name = "AnneePromo", nullable = false)

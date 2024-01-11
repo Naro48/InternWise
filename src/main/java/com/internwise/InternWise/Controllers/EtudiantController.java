@@ -2,6 +2,7 @@ package com.internwise.InternWise.Controllers;
 
 import com.internwise.InternWise.Entities.EtudiantEntity;
 import com.internwise.InternWise.Service.EtudiantImpl;
+import com.internwise.InternWise.dto.EtudiantDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,8 +21,8 @@ public class EtudiantController {
 
 
     @PostMapping("/create")
-    public ResponseEntity<EtudiantEntity> createEtudiant(@RequestBody EtudiantEntity etudiantEntity) {
-        EtudiantEntity newEtudiant = etudiantService.createEtudiant(etudiantEntity);
+    public ResponseEntity<EtudiantEntity> createEtudiant(@RequestBody EtudiantDto etudiantDto) {
+        EtudiantEntity newEtudiant = etudiantService.createEtudiant(etudiantDto);
         return new ResponseEntity<>(newEtudiant, HttpStatus.CREATED);
     }
 

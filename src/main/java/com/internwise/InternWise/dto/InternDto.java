@@ -11,7 +11,6 @@ import java.util.Date;
 @NoArgsConstructor
 public class InternDto implements Serializable{
 
-    private int id;
     private Integer year;
     private Date dateDebut;
     private Date dateFin;
