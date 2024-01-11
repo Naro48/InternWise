@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/prof")
+@CrossOrigin("http://localhost:4200/")
 public class ProfController {
 
     private final ProfImpl profService;

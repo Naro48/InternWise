@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/interns")
+@CrossOrigin("http://localhost:4200/")
 public class InternController {
 
     private final InternService internService;

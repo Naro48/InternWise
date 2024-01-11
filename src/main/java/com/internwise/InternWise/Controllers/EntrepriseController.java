@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/entreprise")
+@CrossOrigin("http://localhost:4200/")
 public class EntrepriseController {
 
     private final EntrepriseImpl entrepriseService;
