@@ -18,6 +18,7 @@ public class EtudiantController {
         this.etudiantService = etudiantService;
     }
 
+
     @PostMapping("/create")
     public ResponseEntity<EtudiantEntity> createEtudiant(@RequestBody EtudiantEntity etudiantEntity) {
         EtudiantEntity newEtudiant = etudiantService.createEtudiant(etudiantEntity);

@@ -17,6 +17,7 @@ public class ProfController {
         this.profService = profService;
     }
 
+
     @GetMapping("/get/{id}")
     public ResponseEntity<ProfEntity> getProfById(@PathVariable("id") int id) {
         ProfEntity profEntity = profService.findById(id);
