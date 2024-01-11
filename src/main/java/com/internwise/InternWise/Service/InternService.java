@@ -2,6 +2,7 @@ package com.internwise.InternWise.Service;
 
 import com.internwise.InternWise.Entities.EtudiantEntity;
 import com.internwise.InternWise.Entities.InternEntity;
+import com.internwise.InternWise.Repositories.EtudiantRepo;
 import com.internwise.InternWise.Repositories.InternRepo;
 import com.internwise.InternWise.Repositories.TypeStageRepo;
 import com.internwise.InternWise.StatutStage;
@@ -16,12 +17,15 @@ public class InternService implements InternServiceInt{
     private final InternRepo internRepo;
     private final TypeStageRepo typeStageRepo ;
 
+    private final EtudiantRepo etudiantRepo;
 
 
 
-    public InternService(InternRepo internRepo, TypeStageRepo typeStageRepo) {
+
+    public InternService(InternRepo internRepo, TypeStageRepo typeStageRepo, EtudiantRepo etudiantRepo) {
         this.internRepo = internRepo;
         this.typeStageRepo = typeStageRepo;
+        this.etudiantRepo = etudiantRepo;
     }
 
     public InternEntity createIntern(InternDto intern){
@@ -32,6 +36,7 @@ public class InternService implements InternServiceInt{
         createdIntern.setDateFin(intern.getDateFin());
         createdIntern.setTypeStage(typeStageRepo.findByCodeTypeStage(intern.getCodeTypeStage()) );
         createdIntern.setStatutStage(StatutStage.Avenir);
+        createdIntern.setEtudiant(etudiantRepo.findById(intern.getEtudiant()));
 
         return internRepo.save(createdIntern);
     }
@@ -45,10 +50,11 @@ public class InternService implements InternServiceInt{
         intern.setYear(internModified.getYear());
         intern.setDateDebut(internModified.getDateDebut());
         intern.setDateFin(internModified.getDateFin());
-        intern.setTuteur(internModified.getTuteur());
         intern.setProfesseur(internModified.getProfesseur());
         intern.setCompteRendu(internModified.getCompteRendu());
         intern.setTypeStage(internModified.getTypeStage());
+        intern.setStatutStage(StatutStage.Avenir);
+
 
 
 

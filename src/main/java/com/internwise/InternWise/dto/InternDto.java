@@ -19,4 +19,5 @@ public class InternDto implements Serializable{
     private int codeTypeStage;
     private int etudiant;
 
+
 }

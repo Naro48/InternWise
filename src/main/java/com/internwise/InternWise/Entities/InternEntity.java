@@ -49,15 +49,15 @@ public class InternEntity implements Serializable {
     private EtudiantEntity etudiant;
 
     @ManyToOne
-    @JoinColumn(name = "numEntreprise")
+    @JoinColumn(name = "numEntreprise",nullable = true)
     private EntrepriseEntity entreprise;
 
     @ManyToOne
-    @JoinColumn(name = "numProf")
+    @JoinColumn(name = "numProf",nullable = true)
     private ProfEntity professeur;
 
     @ManyToOne
-    @JoinColumn(name = "codeTypeStage", nullable = false)
+    @JoinColumn(name = "codeTypeStage", nullable = true)
     private TypeStageEntity typeStage;
 
 }
