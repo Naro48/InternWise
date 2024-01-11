@@ -2,6 +2,7 @@ package com.internwise.InternWise.Service;
 
 import com.internwise.InternWise.Entities.User;
 import com.internwise.InternWise.Repositories.UserRepository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -31,5 +32,9 @@ public class UserService {
             userRepository.save(user);
         }
         return users;
+    }
+
+    public List<User> searchByName( String username){
+        return userRepository.searchByName(username);
     }
 }
