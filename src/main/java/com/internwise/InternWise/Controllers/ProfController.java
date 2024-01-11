@@ -3,6 +3,7 @@ package com.internwise.InternWise.Controllers;
 import com.internwise.InternWise.Entities.ProfEntity;
 import com.internwise.InternWise.Entities.PromotionEntity;
 import com.internwise.InternWise.Service.ProfImpl;
+import com.internwise.InternWise.Service.PromoService;
 import com.internwise.InternWise.dto.ProfDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,8 +17,11 @@ public class ProfController {
 
     private final ProfImpl profService;
 
-    public ProfController(ProfImpl profService) {
+    private final PromoService promoService;
+
+    public ProfController(ProfImpl profService, PromoService promoService) {
         this.profService = profService;
+        this.promoService = promoService;
     }
 
 
@@ -58,5 +62,11 @@ public class ProfController {
     @GetMapping("/all")
     public ResponseEntity<List<ProfEntity>> findAll(){
         return new ResponseEntity<>(profService.findAll(),HttpStatus.OK);
+    }
+
+    @PostMapping("/assign")
+    public ResponseEntity<PromotionEntity> assignProf(@RequestParam("ProfId") int profId
+                                                    ,@RequestParam("PromoId") int promoId){
+        return new ResponseEntity<>(promoService.assignProf(profId,promoId),HttpStatus.OK);
     }
 }

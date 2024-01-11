@@ -11,4 +11,6 @@ public interface PromoInt {
     PromotionEntity updateNbrRecus(int anneePromo);
 
     PromotionEntity updateNbrInscris(int anneePromo);
+
+    PromotionEntity assignProf(int numProf , int numPromo);
 }
