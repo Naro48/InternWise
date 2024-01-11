@@ -26,6 +26,7 @@ public interface InternServiceInt {
 
     public void startIntern(int id);
 
+    public List<InternEntity> findAll();
 
 
 

@@ -102,4 +102,11 @@ public class InternService implements InternServiceInt{
         InternEntity intern = internRepo.findById(id);
         intern.setStatutStage(StatutStage.Encours);
     }
+
+    @Override
+    public List<InternEntity> findAll() {
+        return internRepo.findAll();
+    }
+
+
 }

@@ -78,4 +78,9 @@ public class InternController {
         return new ResponseEntity<>("le stage a commencé", HttpStatus.OK);
     }
 
+    @GetMapping("/all")
+    public ResponseEntity<List<InternEntity>> findAll(){
+        return new ResponseEntity<>(internService.findAll(),HttpStatus.OK);
+    }
+
 }
