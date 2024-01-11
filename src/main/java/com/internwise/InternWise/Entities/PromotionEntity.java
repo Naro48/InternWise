@@ -21,7 +21,7 @@ public class PromotionEntity implements Serializable {
     @Column(name = "nombreInscrits")
     private String nombreInscrits;
 
-    @Column(name = "nombreRecus", nullable = false)
+    @Column(name = "nombreRecus")
     private String nombreRecus;
 
     @Column(name = "numProf")

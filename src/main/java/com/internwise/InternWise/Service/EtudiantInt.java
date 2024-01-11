@@ -16,5 +16,7 @@ public interface EtudiantInt {
 
     public void deleteEtudiantById(int id);
 
+    public List<EtudiantEntity> findAll();
+
 
 }

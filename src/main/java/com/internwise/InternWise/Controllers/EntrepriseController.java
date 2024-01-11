@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/entreprise")
 public class EntrepriseController {
@@ -41,5 +43,10 @@ public class EntrepriseController {
     public ResponseEntity<EntrepriseEntity> getEntrepriseById(@PathVariable("id") int id) {
         EntrepriseEntity entrepriseEntity = entrepriseService.findById(id);
         return new ResponseEntity<>(entrepriseEntity, HttpStatus.OK);
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<EntrepriseEntity>> findAll(){
+        return new ResponseEntity<>(entrepriseService.findAll(),HttpStatus.OK);
     }
 }

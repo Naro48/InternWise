@@ -5,6 +5,8 @@ import com.internwise.InternWise.Repositories.EntrepriseRepo;
 import com.internwise.InternWise.dto.EntrepriseDto;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class EntrepriseImpl implements EntrepriseInt{
 
@@ -46,5 +48,10 @@ public class EntrepriseImpl implements EntrepriseInt{
     @Override
     public EntrepriseEntity findById(int id) {
         return entrepriseRepo.findById(id);
+    }
+
+    @Override
+    public List<EntrepriseEntity> findAll() {
+        return entrepriseRepo.findAll();
     }
 }

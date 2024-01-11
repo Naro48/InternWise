@@ -3,9 +3,12 @@ package com.internwise.InternWise.Controllers;
 import com.internwise.InternWise.Entities.ProfEntity;
 import com.internwise.InternWise.Entities.PromotionEntity;
 import com.internwise.InternWise.Service.ProfImpl;
+import com.internwise.InternWise.dto.ProfDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/prof")
@@ -24,8 +27,8 @@ public class ProfController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<ProfEntity> addProf(@RequestBody ProfEntity profEntity) {
-        ProfEntity newProf = profService.addProf(profEntity);
+    public ResponseEntity<ProfEntity> addProf(@RequestBody ProfDto profDto) {
+        ProfEntity newProf = profService.addProf(profDto);
         return new ResponseEntity<>(newProf, HttpStatus.CREATED);
     }
 
@@ -49,5 +52,10 @@ public class ProfController {
         promotionEntity.setAnneePromo(promotionId);
         ProfEntity profEntity = profService.findByPromotion(promotionEntity);
         return new ResponseEntity<>(profEntity, HttpStatus.OK);
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<ProfEntity>> findAll(){
+        return new ResponseEntity<>(profService.findAll(),HttpStatus.OK);
     }
 }

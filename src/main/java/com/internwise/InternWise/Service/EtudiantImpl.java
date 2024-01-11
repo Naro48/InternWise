@@ -38,4 +38,11 @@ public class EtudiantImpl implements EtudiantInt{
     public void deleteEtudiantById(int id) {
         etudiantRepo.deleteById(id);
     }
+
+    @Override
+    public List<EtudiantEntity> findAll() {
+        return etudiantRepo.findAll();
+    }
+
+
 }

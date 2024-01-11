@@ -47,4 +47,9 @@ public class EtudiantController {
         etudiantService.deleteEtudiantById(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
-}
+
+    @GetMapping("/all")
+    public ResponseEntity<List<EtudiantEntity>> findAll(){
+        return new ResponseEntity<>(etudiantService.findAll(),HttpStatus.OK);
+    }
+ }

@@ -46,4 +46,9 @@ public class AuthenticationController {
     public ResponseEntity<List<User>> encode(){
         return new ResponseEntity<>(userService.encodePassword(), HttpStatus.OK);
     }
+
+    @GetMapping("/search/{username}")
+    public ResponseEntity<List<User>> searchByName(@PathVariable String username){
+        return new ResponseEntity<>(userService.searchByName(username),HttpStatus.OK);
+    }
 }
