@@ -1,4 +1,82 @@
-<p>list-student works!</p>
-<div *ngFor="let student of students">
-    <div>{{student.nom}}</div>
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Login Form with validation Example</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="list-student.component.css">
+
+</head>
+
+<div class="container">
+  <div class="header">
+    <app-header-dash></app-header-dash>
+  </div>
+  <div class="main-container">
+    <div class="side-nav">
+      <app-side-nav></app-side-nav>
+    </div>
+    <div>
+        <h2>Liste des étudiants</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Numéro Étudiant</th>
+              <th>Nom</th>
+              <th>Prénom</th>
+              <th>Adresse</th>
+              <th>Sexe</th>
+              <th>Date de Naissance</th>
+              <th>Téléphone</th>
+              <th>Mention</th>
+              <th>Année Promotion</th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let student of students">
+              <td>{{ student.id }}</td>
+              <td>{{ student.numEtudiant }}</td>
+              <td>{{ student.nom }}</td>
+              <td>{{ student.prenom }}</td>
+              <td>{{ student.adresse }}</td>
+              <td>{{ student.sexe }}</td>
+              <td>{{ student.date_naissance | date }}</td>
+              <td>{{ student.Tel }}</td>
+              <td>{{ student.mention }}</td>
+              <td>{{ student.AnneePromo }}</td>
+            <!-- Gérer les tâches button -->
+            <td>
+                <button class="button-37" [routerLink]="['/addstudent', student.id]">
+                <fa-icon [icon]="faTasks" class="icon"></fa-icon>
+                <span>Modifier</span>
+                </button>
+            </td>
+
+            <!-- Edit button -->
+            <td>
+                <button>
+                <fa-icon [icon]="faEdit" class="icon" (click)="onSubmit(student.id)"></fa-icon>
+                </button>
+            </td>
+
+            <!-- Delete button -->
+            <td>
+                <button>
+                <fa-icon [icon]="faDelete" class="icon" (click)="delete(student.id)"></fa-icon>
+                </button>
+            </td>
+
+            <!-- ... -->
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  </div>
 </div>
+
+
+  

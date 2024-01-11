@@ -9,11 +9,12 @@ import { environment } from 'src/environments/environment';
 })
 export class StudentService {
 
-  private apiServerUrl = environment.apiBaseUrl ;
+  private apiServerUrl = 'http://localhost:8080' ;
+
   constructor(private http: HttpClient) { }
 
   public getStudent(): Observable<Student[]>{
-    return this.http.get<Student[]>(`${this.apiServerUrl}/student/all`)
+    return this.http.get<Student[]>(`${this.apiServerUrl}/api/etudiant`)
   }
 
   public addStudent(student: Student): Observable<Student>{
