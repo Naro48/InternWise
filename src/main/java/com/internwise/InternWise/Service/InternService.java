@@ -1,7 +1,9 @@
 package com.internwise.InternWise.Service;
 
+import com.internwise.InternWise.Entities.EntrepriseEntity;
 import com.internwise.InternWise.Entities.EtudiantEntity;
 import com.internwise.InternWise.Entities.InternEntity;
+import com.internwise.InternWise.Repositories.EntrepriseRepo;
 import com.internwise.InternWise.Repositories.EtudiantRepo;
 import com.internwise.InternWise.Repositories.InternRepo;
 import com.internwise.InternWise.Repositories.TypeStageRepo;
@@ -19,13 +21,19 @@ public class InternService implements InternServiceInt{
 
     private final EtudiantRepo etudiantRepo;
 
+    private final EntrepriseImpl entrepriseService;
+
+    private final EntrepriseRepo entrepriseRepo;
 
 
 
-    public InternService(InternRepo internRepo, TypeStageRepo typeStageRepo, EtudiantRepo etudiantRepo) {
+
+    public InternService(InternRepo internRepo, TypeStageRepo typeStageRepo, EtudiantRepo etudiantRepo, EntrepriseImpl entreprise, EntrepriseImpl entrepriseService, EntrepriseRepo entrepriseRepo) {
         this.internRepo = internRepo;
         this.typeStageRepo = typeStageRepo;
         this.etudiantRepo = etudiantRepo;
+        this.entrepriseService = entrepriseService;
+        this.entrepriseRepo = entrepriseRepo;
     }
 
     public InternEntity createIntern(InternDto intern){
@@ -37,6 +45,18 @@ public class InternService implements InternServiceInt{
         createdIntern.setTypeStage(typeStageRepo.findByCodeTypeStage(intern.getCodeTypeStage()) );
         createdIntern.setStatutStage(StatutStage.Avenir);
         createdIntern.setEtudiant(etudiantRepo.findById(intern.getEtudiant()));
+        EntrepriseEntity entrepriseEntity = new EntrepriseEntity();
+        entrepriseEntity.setAdresseEntreprise(intern.getAdresseEntreprise());
+        entrepriseEntity.setNomEntreprise(intern.getNomEntreprise());
+        entrepriseEntity.setFormeJuridique(intern.getFormeJuridique());
+        entrepriseEntity.setRaisonSociale(intern.getRaisonSociale());
+        entrepriseEntity.setNumTelStandard(intern.getNumTelStandard());
+        EntrepriseEntity ent = entrepriseRepo.save(entrepriseEntity);
+
+        createdIntern.setEntreprise(ent);
+
+
+
 
         return internRepo.save(createdIntern);
     }
