@@ -14,7 +14,6 @@
         <table>
           <thead>
             <tr>
-              <th>ID</th>
               <th>Numéro Étudiant</th>
               <th>Nom</th>
               <th>Prénom</th>
@@ -30,16 +29,16 @@
           </thead>
           <tbody>
             <tr *ngFor="let student of students">
-              <td>{{ student.id }}</td>
+
               <td>{{ student.numEtudiant }}</td>
               <td>{{ student.nom }}</td>
               <td>{{ student.prenom }}</td>
               <td>{{ student.adresse }}</td>
               <td>{{ student.sexe }}</td>
-              <td>{{ student.date_naissance | date }}</td>
-              <td>{{ student.Tel }}</td>
+              <td>{{ student.dateNaissance | date }}</td>
+              <td>{{ student.numeroTel }}</td>
               <td>{{ student.mention }}</td>
-              <td>{{ student.AnneePromo }}</td>
+              <td>{{ student.anneePromo }}</td>
 
 
             <!-- Edit button -->
