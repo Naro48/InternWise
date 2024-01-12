@@ -45,6 +45,8 @@ public class InternService implements InternServiceInt{
         createdIntern.setTypeStage(typeStageRepo.findByCodeTypeStage(intern.getCodeTypeStage()) );
         createdIntern.setStatutStage(StatutStage.Avenir);
         createdIntern.setEtudiant(etudiantRepo.findById(intern.getEtudiant()));
+
+
         EntrepriseEntity entrepriseEntity = new EntrepriseEntity();
         entrepriseEntity.setAdresseEntreprise(intern.getAdresseEntreprise());
         entrepriseEntity.setNomEntreprise(intern.getNomEntreprise());
@@ -52,8 +54,9 @@ public class InternService implements InternServiceInt{
         entrepriseEntity.setRaisonSociale(intern.getRaisonSociale());
         entrepriseEntity.setNumTelStandard(intern.getNumTelStandard());
         EntrepriseEntity ent = entrepriseRepo.save(entrepriseEntity);
-
         createdIntern.setEntreprise(ent);
+
+
 
 
 
