@@ -104,6 +104,7 @@ export class AddStageFormComponent implements OnInit{
       this.stageService.addStage(stageData).subscribe(
         (createdStage) => {
           console.log("New stage created: ", createdStage);
+          this.router.navigate(['/addstage'])
           // Additional logic if needed
         },
         (error) => {

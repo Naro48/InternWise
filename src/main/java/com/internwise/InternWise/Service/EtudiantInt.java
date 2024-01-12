@@ -19,5 +19,7 @@ public interface EtudiantInt {
 
     public List<EtudiantEntity> findAll();
 
+    public List<EtudiantEntity> searchByName(String nom);
+
 
 }

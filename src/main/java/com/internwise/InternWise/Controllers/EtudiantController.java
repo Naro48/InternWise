@@ -55,4 +55,9 @@ public class EtudiantController {
     public ResponseEntity<List<EtudiantEntity>> findAll(){
         return new ResponseEntity<>(etudiantService.findAll(),HttpStatus.OK);
     }
+
+    @GetMapping("/search/{nom}")
+    public ResponseEntity<List<EtudiantEntity>> searchByName(@PathVariable String nom){
+        return new ResponseEntity<>(etudiantService.searchByName(nom),HttpStatus.OK);
+    }
  }
