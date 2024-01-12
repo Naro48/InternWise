@@ -1,9 +1,6 @@
 package com.internwise.InternWise.Service;
 
-import com.internwise.InternWise.Entities.EntrepriseEntity;
-import com.internwise.InternWise.Entities.EtudiantEntity;
-import com.internwise.InternWise.Entities.InternEntity;
-import com.internwise.InternWise.Entities.TuteurEntity;
+import com.internwise.InternWise.Entities.*;
 import com.internwise.InternWise.Repositories.*;
 import com.internwise.InternWise.StatutStage;
 import com.internwise.InternWise.dto.InternDto;
@@ -57,17 +54,16 @@ public class InternService implements InternServiceInt{
         EntrepriseEntity ent = entrepriseRepo.save(entrepriseEntity);
         createdIntern.setEntreprise(ent);
 
+        createdIntern.setTypeStage(typeStageRepo.findByCodeTypeStage(intern.getCodeTypeStage()));
+
+
+
         TuteurEntity tut = new TuteurEntity();
         tut.setNom(intern.getTuteur());
         tut.setTelephonePersonnel(intern.getTelTuteur());
         TuteurEntity tuteur = tuteurRepo.save(tut);
 
         createdIntern.setTuteur(tuteur);
-
-
-
-
-
         return internRepo.save(createdIntern);
     }
 
