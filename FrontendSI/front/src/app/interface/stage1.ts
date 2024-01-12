@@ -4,7 +4,7 @@ import { Student } from "./student";
 import { Tuteur } from "./tuteur";
 import { TypeStage } from "./type-stage";
 
-export interface Stage {
+export interface Stage1 {
     id: number;
     year: number ,
     dateDebut: Date,
@@ -12,10 +12,17 @@ export interface Stage {
     statutStage: string,
     compteRendu: string,
 
-    typeStage: TypeStage,
-    etudiant: Student,
-    professeur: Prof,
-    entreprise: Entreprise,
-    tuteur: Tuteur
+    codeTypeStage: number,
+    etudiant: number,
+    prof: number,
+
+    tuteur: string,
+    telTuteur: string,
+
+    nomEntreprise: string,
+    raisonSociale: string,
+    formeJuridique: string,
+    adresseEntreprise:string,
+    numTelStandard : string
 
 }

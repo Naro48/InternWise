@@ -3,7 +3,7 @@ import { faAdd } from '@fortawesome/free-solid-svg-icons';
 import { StageService } from '../service/stage.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { Stage } from '../interface/stage';
+import { Stage1 } from '../interface/stage1';
 import { Entreprise } from '../interface/entreprise';
 
 @Component({
@@ -27,9 +27,10 @@ export class AddStageFormComponent implements OnInit{
   statutStage: string="";
   compteRendu: string="";
 
-  codeTypeStage: number =0;
-  numEtudiant: number =0;
-  professeur: string ="";
+  codeTypeStageString: string ="";
+  codeTypeStage : number = 0; 
+  etudiant: number =0;
+  professeur: number =0;
 
   nomEntreprise: string ="";
   raisonSociale : string ="";
@@ -37,7 +38,8 @@ export class AddStageFormComponent implements OnInit{
   adresseEntreprise: string ="";
   numTelStandard: string ="";
 
-  tuteur: string = ""
+  tuteur: string = "";
+  telTuteur: string="";
 
   stageID: any;
 
@@ -60,7 +62,7 @@ export class AddStageFormComponent implements OnInit{
 
   loadStage() {
     this.stageService.getStageByID(this.stageID).subscribe(
-      (stage: Stage) => {
+      (stage: Stage1) => {
         this.stageToUpdate = stage;
         console.log(stage);
       },
@@ -69,32 +71,33 @@ export class AddStageFormComponent implements OnInit{
       }
     );
   }  
+ 
+  ;
 
-  onSubmit() {}
 
+  onSubmit() {
 
-  /*onSubmit() {
-    const stageData: Stage = {
+    this.codeTypeStage = parseInt(this.codeTypeStageString);
+
+    const stageData: Stage1 = {
       id: this.id,
       year: this.year,
       dateDebut: this.dateDebut,
       dateFin: this.dateFin,
       statutStage: this.statutStage,
       compteRendu: this.compteRendu,
-      typeStage: undefined,
-      etudiant: undefined,
-      professeur: undefined,
-      entreprise: undefined,
-      tuteur: undefined
-    }
-    const entrepriseData: Entreprise = {
+      codeTypeStage: this.codeTypeStage,
+      etudiant: this.etudiant,
+      prof: this.professeur,
+      tuteur: this.tuteur,
+      telTuteur: this.telTuteur,
       nomEntreprise: this.nomEntreprise,
       raisonSociale: this.raisonSociale,
       formeJuridique: this.formeJuridique,
       adresseEntreprise: this.adresseEntreprise,
-      numTelStandard: this.numTelStandard,
-      //tuteur: this.tuteur
-    };
+      numTelStandard: this.numTelStandard
+    }
+    
   
     // Assuming you have a service called stageService with addStage and updateStage methods
     if (!this.isEditMode) {
@@ -118,8 +121,8 @@ export class AddStageFormComponent implements OnInit{
           console.error("Error updating stage:", error);
         }
       );
-    }*/
+    }
   }
   
   
-
+}

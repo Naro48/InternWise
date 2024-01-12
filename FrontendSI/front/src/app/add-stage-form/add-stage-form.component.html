@@ -30,6 +30,10 @@
                         <span class="title">Details de stage</span>
 
                         <div class="fields">
+                            <div class="input-field" *ngIf="isEditMode">
+                                <label>identifiant de l'étudiant</label>
+                                <input type="text" placeholder="Entrez l'identifiant de l'étudiant" required [(ngModel)]="etudiant" [ngModelOptions]="{ standalone: true }">
+                            </div>
 
                             <div class="input-field" *ngIf="isEditMode">
                                 <label>l'année</label>
@@ -47,8 +51,15 @@
                             </div>
 
                             <div class="input-field">
-                                <label>Statut de stage</label>
-                                <input type="text" placeholder="Entrez la Date de fin" required [(ngModel)]="statutStage" [ngModelOptions]="{ standalone: true }">
+                                <label>Statut de Stage</label>
+                                <select [(ngModel)]="statutStage">
+                                    <option value="Encours">En cours</option>
+                                    <option value="Avenir">A venir</option>
+                                    <option value="Termine">Terminé</option>
+                                  
+
+
+                                </select>    
                             </div>
 
                             <div class="input-field">
@@ -58,7 +69,7 @@
 
                             <div class="input-field">
                                 <label>code type de stage</label>
-                                <select [(ngModel)]="codeTypeStage">
+                                <select [(ngModel)]="codeTypeStageString">
                                     <option value="11">11</option>
                                     <option value="21">21</option>
                                     <option value="22">22</option>
@@ -77,6 +88,11 @@
                             <div class="input-field">
                                 <label>Tuteur</label>
                                 <input type="text" placeholder="Entrez le Tuteur" [(ngModel)]="tuteur" [ngModelOptions]="{ standalone: true }">
+                            </div>
+
+                            <div class="input-field">
+                                <label>Telephone de tuteur</label>
+                                <input type="text" placeholder="Entrez le telephone du tuteur" [(ngModel)]="telTuteur" [ngModelOptions]="{ standalone: true }">
                             </div>
 
                             <span class="title">Details de l'entreprise</span>
