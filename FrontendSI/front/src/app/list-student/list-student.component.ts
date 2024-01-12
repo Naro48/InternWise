@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./list-student.component.css']
 })
 export class ListStudentComponent implements OnInit {
-  public students: Student[] | undefined;
+  public students: any[] | undefined;
   
   faTasks = faTasks;
   faEdit = faEdit;
@@ -29,7 +29,7 @@ export class ListStudentComponent implements OnInit {
 
   public getStudents(): void {
     this.studentService.getStudent().subscribe(
-      (response: Student[]) =>{
+      (response: any[]) =>{
         this.students =response;
       },
       (error: HttpErrorResponse)=>{

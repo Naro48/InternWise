@@ -1,1 +1,74 @@
-<p>list-prof works!</p>
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Login Form with validation Example</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="list-prof.component.css">
+
+</head>
+
+<div class="container">
+  <div class="header">
+    <app-header-dash></app-header-dash>
+  </div>
+  <div class="main-container">
+    <div class="side-nav">
+      <app-side-nav></app-side-nav>
+    </div>
+
+    <div>
+        <h2>Liste des Professeurs</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Identifiant du professeur</th>
+              <th>Nom</th>
+              <th>Prénom</th>
+              <th>Adresse</th>
+              <th>Sexe</th>
+              <th>Date d'embauche</th>
+              <th>Téléphone personnel</th>
+              <th>Téléphone institutionnel</th>
+              <th>Année Promotion</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let prof of profs">
+              <td>{{ prof.numProf }}</td>
+              <td>{{ prof.nom }}</td>
+              <td>{{ prof.prenom }}</td>
+              <td>{{ prof.adresse }}</td>
+              <td>{{ prof.sexe }}</td>
+              <td>{{ prof.dateEmbauche | date }}</td>
+              <td>{{ prof.telephonePersonnel }}</td>
+              <td>{{ prof.telephoneInstitutionnel }}</td>
+              <td>{{ prof.AnneePromo }}</td>
+
+
+            <!-- Edit button -->
+            <td>
+                <button>
+                <fa-icon [icon]="faEdit" class="icon" ></fa-icon>
+                </button>
+            </td>
+
+            <!-- Delete button -->
+            <td>
+                <button>
+                <fa-icon [icon]="faDelete" class="icon" ></fa-icon>
+                </button>
+            </td>
+
+            <!-- ... -->
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  </div>
+</div>
+
+
+  

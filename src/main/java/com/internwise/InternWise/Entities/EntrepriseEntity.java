@@ -15,7 +15,7 @@ import java.io.Serializable;
 public class EntrepriseEntity implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "numEntreprise")
     private Integer numEntreprise;
 

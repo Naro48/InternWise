@@ -22,6 +22,8 @@ import { AddStudentFormComponent } from './add-student-form/add-student-form.com
 import { ListStageComponent } from './list-stage/list-stage.component';
 import { AddStageFormComponent } from './add-stage-form/add-stage-form.component';
 import { AddStageForm1Component } from './add-stage-form-1/add-stage-form-1.component';
+import { ContactComponent } from './contact/contact.component';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -41,7 +43,9 @@ import { AddStageForm1Component } from './add-stage-form-1/add-stage-form-1.comp
     AddStudentFormComponent,
     ListStageComponent,
     AddStageFormComponent,
-    AddStageForm1Component
+    AddStageForm1Component,
+    ContactComponent,
+    AboutComponent
   ],
   imports: [
     RouterModule,

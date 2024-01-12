@@ -63,24 +63,21 @@ export class AddStudentFormComponent implements OnInit{
 
   onSubmit() {
     const formData: Student = {
-      id: this.studentID, // Assuming studentId is available for edit mode
-      numEtudiant: this.numEtudiant,
       nom: this.nom,
       prenom: this.prenom,
       adresse: this.adresse,
       sexe: this.sexe,
-      date_naissance: this.date_naissance,
-      Tel: this.Tel,
+      dateNaissance: this.date_naissance,
+      numeroTel: this.Tel,
       mention: this.mention,
-      AnneePromo: this.AnneePromo,
+      anneePromo: this.AnneePromo,
     };
 
     if (!this.isEditMode) {
       this.studentService.addStudent(formData).subscribe(
         (createdStudent) => {
           console.log("New student created: ", createdStudent);
-          localStorage.setItem("StudentId", createdStudent.id.toString());
-          this.router.navigate(['/task_creation'], { queryParams: { studentId: createdStudent.id } });
+          this.router.navigate(['/dashboard']);
         },
         (error) => {
           console.error('Error creating student: ', error);

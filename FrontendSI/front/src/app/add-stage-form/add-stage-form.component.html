@@ -30,12 +30,12 @@
                         <span class="title">Details de stage</span>
 
                         <div class="fields">
-                            <div class="input-field" *ngIf="isEditMode">
+                            <div class="input-field" >
                                 <label>identifiant de l'étudiant</label>
                                 <input type="text" placeholder="Entrez l'identifiant de l'étudiant" required [(ngModel)]="etudiant" [ngModelOptions]="{ standalone: true }">
                             </div>
 
-                            <div class="input-field" *ngIf="isEditMode">
+                            <div class="input-field" >
                                 <label>l'année</label>
                                 <input type="text" placeholder="Entrez l'année" required [(ngModel)]="year" [ngModelOptions]="{ standalone: true }">
                             </div>

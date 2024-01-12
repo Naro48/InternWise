@@ -22,8 +22,8 @@
     <div class="container_ok">
             <form action="#">
                 <div class="form first">
-                    <header *ngIf="!isEditMode">Nouveau Inscrit</header>
-                    <header *ngIf="isEditMode">Modification des données</header>
+                    <header >Nouveau Inscrit</header>
+                    
 
 
                     <div class="details personal">
@@ -31,10 +31,7 @@
 
                         <div class="fields">
 
-                            <div class="input-field" *ngIf="isEditMode">
-                                <label>Numéro Étudiant</label>
-                                <input type="text" placeholder="Entrez le numéro étudiant" required [(ngModel)]="numEtudiant" [ngModelOptions]="{ standalone: true }">
-                            </div>
+                            
 
                             <div class="input-field">
                                 <label>Nom</label>

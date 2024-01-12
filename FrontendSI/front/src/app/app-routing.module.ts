@@ -10,6 +10,8 @@ import { ListProfComponent } from './list-prof/list-prof.component';
 import { AddStudentFormComponent } from './add-student-form/add-student-form.component';
 import { ListStageComponent } from './list-stage/list-stage.component';
 import { AddStageFormComponent } from './add-stage-form/add-stage-form.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -20,7 +22,10 @@ const routes: Routes = [
   { path: 'listprof' , component: ListProfComponent},
   { path: 'creation' , component: AddStudentFormComponent},
   { path: 'liststage' , component: ListStageComponent},
-  { path: 'creation/stage' , component: AddStageFormComponent}
+  { path: 'creation/stage' , component: AddStageFormComponent},
+  { path: 'about' , component: AboutComponent}  ,
+  { path: 'contact' , component: ContactComponent}  
+
 
 
 ];
