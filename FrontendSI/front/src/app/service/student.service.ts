@@ -27,13 +27,14 @@ export class StudentService {
   }
 
 
-<<<<<<< HEAD
-  public addStudent(student: Student): Observable<Student>{
+ /* public addStudent(student: Student): Observable<Student>{
     return this.http.post<Student>(`${this.apiServerUrl}/api/etudiant/create`,student)
-=======
+  }*/
+
+
+
   public addStudent(student: any): Observable<any>{
     return this.http.post<any>(`${this.apiServerUrl}/api/etudiant/create`,student)
->>>>>>> 1db2423bd0ab69518f0d0be0a4c5bf42881f99b3
   }
 
   public updateStudent(student: any): Observable<any>{
