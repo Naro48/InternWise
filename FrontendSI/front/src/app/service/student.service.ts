@@ -22,7 +22,7 @@ export class StudentService {
 
 
   getStudentByID(id: number): Observable<Student> {
-    const endpoint = `${this.apiServerUrl}/projets/find/${id}`;
+    const endpoint = `${this.apiServerUrl}/students/find/${id}`;
     return this.http.get<Student>(endpoint);
   }
 

@@ -1,17 +1,4 @@
-.top-section {
-    @media only screen and (max-width: 1600px) {
-      width: 1280px;
-    }
-    @media only screen and (max-width: 1500px) {
-      width: 1180px;
-    }
-    @media only screen and (max-width: 1400px) {
-      width: 1080px;
-    }
-    @media only screen and (max-width: 1200px) {
-      width: 980px;
-    }
-  }
+
   .middle-section {
     display: flex;
     justify-content: space-between;
@@ -56,7 +43,7 @@
         justify-content: center;
         align-items: center;
       }
-      
+
     }
   }
   .bottom-section {
@@ -93,5 +80,84 @@
         display: flex;
         margin: auto;
       }
+    }
+  }
+  .top-section {
+    position: relative;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: contain; /* Adjust the background size as needed */
+    background-position: left top; /* Adjust the background position */
+
+    background-repeat: no-repeat;
+  }
+
+  .link-in-corner {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  @media only screen and (max-width: 1600px) {
+    .top-section {
+      max-width: 1280px;
+    }
+  }
+
+  @media only screen and (max-width: 1500px) {
+    .top-section {
+      max-width: 1180px;
+    }
+  }
+
+  @media only screen and (max-width: 1400px) {
+    .top-section {
+      max-width: 1080px;
+    }
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .top-section {
+      max-width: 980px;
+    }
+  }
+
+  @media only screen and (max-width: 1600px) {
+    .top-section {
+      height: 50vh; /* Adjust the height value as needed */
+    }
+  }
+
+  @media only screen and (max-width: 1500px) {
+    .top-section {
+      height: 50vh; /* Adjust the height value as needed */
+    }
+  }
+
+  @media only screen and (max-width: 1400px) {
+    .top-section {
+      height: 40vh; /* Adjust the height value as needed */
+    }
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .top-section {
+      height: 30vh; /* Adjust the height value as needed */
     }
   }

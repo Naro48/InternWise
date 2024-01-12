@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Login Form with validation Example</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="list-stage.component.css">
+
+</head>
+
+
+    <div>
+        <h2>Liste des stages</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Année</th>
+              <th>Date début</th>
+              <th>Date de fin</th>
+              <th>Status de stage</th>
+              <th>Compte rendu</th>
+              <th>Code type de stage</th>
+              <th>numéro d'étudiant</th>
+              <th>nom d'étudiant</th>
+              <th>prenom d'étudiant</th>
+              <th>professeur encadrant</th>
+              <th>entreprise</th>
+              <th>tuteur</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let stage of stages">
+              <td>{{ stage.year }}</td>
+              <td>{{ stage.dateDebut | date}}</td>
+              <td>{{ stage.dateFin | date}}</td>
+              <td>{{ stage.statutStage }}</td>
+              <td>{{ stage.compteRendu }}</td>
+              <td>{{ stage.typeStage.codeTypeStage }}</td>
+              <td>{{ stage.etudiant.numEtudiant }}</td>
+              <td>{{ stage.etudiant.nom }}</td>
+              <td>{{ stage.etudiant.prenom }}</td>
+              <td>{{ stage.professeur.nom }}</td>
+              <td>{{ stage.entreprise.nomEntreprise }}</td>
+              <td>{{ stage.tuteur.nom }}</td>
+
+
+            <!--  -->
+            <td>
+            <!--    <button class="button-37" [routerLink]="['/addstage', stage.id]">
+                <fa-icon [icon]="faTasks" class="icon"></fa-icon>
+                <span>Modifier</span>
+                </button>-->
+            </td>
+
+            <!-- Edit button -->
+            <td>
+                <!--<button>
+                <fa-icon [icon]="faEdit" class="icon" (click)="onSubmit(stage.id)"></fa-icon>
+                </button>-->
+            </td>
+
+            <!-- Delete button -->
+
+
+            <!-- ... -->
+            </tr>
+          </tbody>
+        </table>
+      </div>

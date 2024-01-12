@@ -1,0 +1,78 @@
+.main-container {
+    display: flex;
+    .side-nav {
+      width: 350px;
+      min-width: 230px;
+      min-height: calc(100vh - 70px);
+      background-color: #04395E;
+      color: #fff;
+      box-shadow: 5px 5px 5px #939393;
+      @media only screen and (max-width: 1300px) {
+        width: 100px;
+        min-width: 100px;
+      }
+    }
+    .main {
+      padding: 30px;
+    }
+  }
+
+  /* CSS for the block containing the stage list */
+.stage-list-container {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+    padding: 20px;
+    border-radius: 8px;
+    max-height: 850px;
+    width: 1200px; /* Set a maximum height for scrolling */
+    overflow-y: auto; /* Enable vertical scrolling when content overflows */
+  }
+  
+  /* CSS for the title "stages Enrolled" */
+  .title {
+    font-weight: bold;
+    font-size: 20px; /* You can adjust the font size as needed */
+    font-family: 'Impact', sans-serif; 
+    margin: 10px;/* Apply a custom font */
+  }
+  
+  /* CSS for the table to style its appearance */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 5px solid #ccc;
+  }
+  
+  th,
+  td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  tr:hover {
+    background-color: #f2f2f2;
+  }
+  
+  /* Style the table header with a gradient background */
+  thead th {
+    background-image: linear-gradient(to bottom, #f2f2f2, #e0e0e0);
+  }
+  
+  /* Style the first column (stage name) with a different font color */
+  td:first-child {
+    color: black;
+    font-weight: bold; /* Blue color */
+  }
+  
+  /* Style the last column (graduation date) with a different font color */
+  td:last-child {
+    color: #ff5722; /* Red color */
+  }
+  

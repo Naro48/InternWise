@@ -8,6 +8,8 @@ import { AddStudentComponent } from './add-student/add-student.component';
 import { ListStudentComponent } from './list-student/list-student.component';
 import { ListProfComponent } from './list-prof/list-prof.component';
 import { AddStudentFormComponent } from './add-student-form/add-student-form.component';
+import { ListStageComponent } from './list-stage/list-stage.component';
+import { AddStageFormComponent } from './add-stage-form/add-stage-form.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -16,7 +18,9 @@ const routes: Routes = [
   { path: 'addstudent' , component: AddStudentComponent},
   { path: 'liststudent' , component: ListStudentComponent},
   { path: 'listprof' , component: ListProfComponent},
-  { path: 'creation' , component: AddStudentFormComponent}
+  { path: 'creation' , component: AddStudentFormComponent},
+  { path: 'liststage' , component: ListStageComponent},
+  { path: 'creation/stage' , component: AddStageFormComponent}
 
 
 ];

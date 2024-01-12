@@ -1,1 +1,52 @@
-<p>add-stage works!</p>
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Login Form with validation Example</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="add-stage.component.css">
+</head>
+
+<div class="container">
+  <div class="header">
+    <app-header-dash></app-header-dash>
+  </div>
+  <div class="main-container">
+    <div class="side-nav">
+      <app-side-nav></app-side-nav>
+    </div>
+
+    <div>
+        <div class="titre"></div>
+    </div>
+    <div class= "stage">
+      <form id="form" style="background-color: gray;
+      width: 300px;
+      height: 44px;
+      border-radius: 5px;
+      display:flex;
+      flex-direction:row;
+      align-items:center;"> 
+        <input type="search" id="query" name="q" placeholder="Search..." style="all: unset;
+        font: 16px system-ui;
+        color: #fff;
+        height: 100%;
+        width: 100%;
+        padding: 6px 10px;">
+        <button style="all: unset;
+        cursor: pointer;
+        width: 44px;
+        height: 44px;"><fa-icon [icon]="faSearch" class="icon"></fa-icon></button>
+      </form>
+
+
+      <app-list-stage></app-list-stage>
+      
+      <button class="button-30" role="button" (click)="OnSubmit()">Ajouter un stage</button>
+    </div>
+    
+    <div class="main">
+      <div></div>
+    </div>
+  </div>
+</div>

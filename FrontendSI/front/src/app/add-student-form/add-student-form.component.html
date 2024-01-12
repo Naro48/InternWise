@@ -19,7 +19,7 @@
       <app-side-nav></app-side-nav>
     </div>
 
-    <div class="container_ok">    
+    <div class="container_ok">
             <form action="#">
                 <div class="form first">
                     <header *ngIf="!isEditMode">Nouveau Inscrit</header>
@@ -28,53 +28,48 @@
 
                     <div class="details personal">
                         <span class="title">Details de l'Étudiant</span>
-    
+
                         <div class="fields">
-                            <div class="input-field" *ngIf="!isEditMode">
-                                <label>Numéro Étudiant</label>
-                                <input type="text" placeholder="Entrez le numéro étudiant" required [(ngModel)]="numEtudiant" [ngModelOptions]="{ standalone: true }">
-                            </div>
-    
+
                             <div class="input-field" *ngIf="isEditMode">
                                 <label>Numéro Étudiant</label>
                                 <input type="text" placeholder="Entrez le numéro étudiant" required [(ngModel)]="numEtudiant" [ngModelOptions]="{ standalone: true }">
                             </div>
-    
+
                             <div class="input-field">
                                 <label>Nom</label>
                                 <input type="text" placeholder="Entrez le nom" required [(ngModel)]="nom" [ngModelOptions]="{ standalone: true }">
                             </div>
-    
+
                             <div class="input-field">
                                 <label>Prénom</label>
                                 <input type="text" placeholder="Entrez le prénom" required [(ngModel)]="prenom" [ngModelOptions]="{ standalone: true }">
                             </div>
-    
+
                             <div class="input-field">
                                 <label>Adresse</label>
                                 <input type="text" placeholder="Entrez l'adresse" [(ngModel)]="adresse" [ngModelOptions]="{ standalone: true }">
                             </div>
-    
+
                             <div class="input-field">
                                 <label>Sexe</label>
-                                <input type="text" placeholder="Entrez le sexe" [(ngModel)]="sexe" [ngModelOptions]="{ standalone: true }">
+                                <select [(ngModel)]="sexe">
+                                    <option value="M">Male</option>
+                                    <option value="F">Female</option>
+                                </select>
                             </div>
-    
+
                             <div class="input-field">
                                 <label>Date de Naissance</label>
                                 <input type="date" placeholder="Entrez la date de naissance" [(ngModel)]="date_naissance" [ngModelOptions]="{ standalone: true }">
                             </div>
-    
+
                             <div class="input-field">
                                 <label>Téléphone</label>
                                 <input type="text" placeholder="Entrez le téléphone" [(ngModel)]="Tel" [ngModelOptions]="{ standalone: true }">
                             </div>
-    
-                            <div class="input-field">
-                                <label>Mention</label>
-                                <input type="text" placeholder="Entrez la mention" [(ngModel)]="mention" [ngModelOptions]="{ standalone: true }">
-                            </div>
-    
+
+
                             <div class="input-field">
                                 <label>Année de Promotion</label>
                                 <input type="text" placeholder="Entrez l'année de promotion" [(ngModel)]="AnneePromo" [ngModelOptions]="{ standalone: true }">
@@ -82,10 +77,10 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="details family">
                     <span class="title"></span>
-    
+
                     <div class="buttons">
                         <button class="sumbit" (click)="onSubmit()">
                             <span class="btnText">Submit</span>
@@ -95,7 +90,7 @@
                 </div>
             </form>
     </div>
-    
+
 
 
 </div></div>
