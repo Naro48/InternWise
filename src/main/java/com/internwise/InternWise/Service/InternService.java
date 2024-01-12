@@ -3,10 +3,8 @@ package com.internwise.InternWise.Service;
 import com.internwise.InternWise.Entities.EntrepriseEntity;
 import com.internwise.InternWise.Entities.EtudiantEntity;
 import com.internwise.InternWise.Entities.InternEntity;
-import com.internwise.InternWise.Repositories.EntrepriseRepo;
-import com.internwise.InternWise.Repositories.EtudiantRepo;
-import com.internwise.InternWise.Repositories.InternRepo;
-import com.internwise.InternWise.Repositories.TypeStageRepo;
+import com.internwise.InternWise.Entities.TuteurEntity;
+import com.internwise.InternWise.Repositories.*;
 import com.internwise.InternWise.StatutStage;
 import com.internwise.InternWise.dto.InternDto;
 import org.springframework.stereotype.Service;
@@ -25,15 +23,18 @@ public class InternService implements InternServiceInt{
 
     private final EntrepriseRepo entrepriseRepo;
 
+    private final TuteurRepo tuteurRepo;
 
 
 
-    public InternService(InternRepo internRepo, TypeStageRepo typeStageRepo, EtudiantRepo etudiantRepo, EntrepriseImpl entreprise, EntrepriseImpl entrepriseService, EntrepriseRepo entrepriseRepo) {
+
+    public InternService(InternRepo internRepo, TypeStageRepo typeStageRepo, EtudiantRepo etudiantRepo, EntrepriseImpl entreprise, EntrepriseImpl entrepriseService, EntrepriseRepo entrepriseRepo, TuteurRepo tuteurRepo) {
         this.internRepo = internRepo;
         this.typeStageRepo = typeStageRepo;
         this.etudiantRepo = etudiantRepo;
         this.entrepriseService = entrepriseService;
         this.entrepriseRepo = entrepriseRepo;
+        this.tuteurRepo = tuteurRepo;
     }
 
     public InternEntity createIntern(InternDto intern){
@@ -56,6 +57,12 @@ public class InternService implements InternServiceInt{
         EntrepriseEntity ent = entrepriseRepo.save(entrepriseEntity);
         createdIntern.setEntreprise(ent);
 
+        TuteurEntity tut = new TuteurEntity();
+        tut.setNom(intern.getTuteur());
+        tut.setTelephonePersonnel(intern.getTelTuteur());
+        TuteurEntity tuteur = tuteurRepo.save(tut);
+
+        createdIntern.setTuteur(tuteur);
 
 
 

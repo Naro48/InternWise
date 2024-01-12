@@ -19,7 +19,8 @@ public class InternDto implements Serializable{
     private int codeTypeStage;
     private int etudiant;
     private int prof;
-    private int tuteur;
+    private String tuteur;
+    private String telTuteur;
     private String nomEntreprise;
     private String raisonSociale;
     private String formeJuridique;
