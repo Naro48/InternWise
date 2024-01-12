@@ -12,7 +12,7 @@ import { Student } from '../interface/student';
 })
 export class AddStudentFormComponent implements OnInit{
 
-  faAdd = faAdd; 
+  faAdd = faAdd;
 
   isEditMode : boolean = false;
 
@@ -25,11 +25,11 @@ export class AddStudentFormComponent implements OnInit{
   adresse: string="";
   sexe: string="";
   date_naissance: Date= new Date();
-  Tel: number= 0;
+  Tel: string="";
   mention: string="";
   AnneePromo: number= 0;
 
-  constructor(private studentService : StudentService , 
+  constructor(private studentService : StudentService ,
               private router: Router,
               private http : HttpClient,
               private route:ActivatedRoute){}
@@ -43,7 +43,7 @@ export class AddStudentFormComponent implements OnInit{
 
         if (this.isEditMode) {
           this.loadStudent();
-          
+
         }
   }
 

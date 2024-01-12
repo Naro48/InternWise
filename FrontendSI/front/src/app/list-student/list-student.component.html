@@ -26,7 +26,6 @@
               <th>Année Promotion</th>
               <th></th>
               <th></th>
-              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -41,13 +40,7 @@
               <td>{{ student.Tel }}</td>
               <td>{{ student.mention }}</td>
               <td>{{ student.AnneePromo }}</td>
-            <!-- Gérer les tâches button -->
-            <td>
-                <button class="button-37" [routerLink]="['/addstudent', student.id]">
-                <fa-icon [icon]="faTasks" class="icon"></fa-icon>
-                <span>Modifier</span>
-                </button>
-            </td>
+
 
             <!-- Edit button -->
             <td>

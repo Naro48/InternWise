@@ -38,6 +38,8 @@ export class ListStudentComponent implements OnInit {
     )
   }
 
+
+  
   onSubmit(studentId: number) {
     this.router.navigate(['/addstudent'], { queryParams: { studentId: studentId } });
   }

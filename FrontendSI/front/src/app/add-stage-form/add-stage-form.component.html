@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Login Form with validation Example</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="add-stage-form.component.css">
+
+
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <app-header-dash></app-header-dash>
+  </div>
+  <div class="main-container">
+    <div class="side-nav">
+      <app-side-nav></app-side-nav>
+    </div>
+
+    <div class="container_ok">
+            <form action="#">
+                <div class="form first">
+                    <header *ngIf="!isEditMode">Ajouter un stage</header>
+                    <header *ngIf="isEditMode">Modification des données</header>
+
+
+                    <div class="details personal">
+                        <span class="title">Details de stage</span>
+
+                        <div class="fields">
+
+                            <div class="input-field" *ngIf="isEditMode">
+                                <label>l'année</label>
+                                <input type="text" placeholder="Entrez l'année" required [(ngModel)]="year" [ngModelOptions]="{ standalone: true }">
+                            </div>
+
+                            <div class="input-field">
+                                <label>Date de début</label>
+                                <input type="date" placeholder="Entrez la Date de début" required [(ngModel)]="dateDebut" [ngModelOptions]="{ standalone: true }">
+                            </div>
+
+                            <div class="input-field">
+                                <label>Date de fin</label>
+                                <input type="date" placeholder="Entrez la Date de fin" required [(ngModel)]="dateFin" [ngModelOptions]="{ standalone: true }">
+                            </div>
+
+                            <div class="input-field">
+                                <label>Statut de stage</label>
+                                <input type="text" placeholder="Entrez la Date de fin" required [(ngModel)]="statutStage" [ngModelOptions]="{ standalone: true }">
+                            </div>
+
+                            <div class="input-field">
+                                <label>compte rendu</label>
+                                <input type="text" placeholder="Entrez le compte rendu" [(ngModel)]="compteRendu" [ngModelOptions]="{ standalone: true }">
+                            </div>
+
+                            <div class="input-field">
+                                <label>code type de stage</label>
+                                <select [(ngModel)]="codeTypeStage">
+                                    <option value="11">11</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="31">31</option>
+                                    <option value="31">32</option>
+
+
+                                </select>
+                            </div>
+
+                            <div class="input-field">
+                                <label>Professeur</label>
+                                <input type="text" placeholder="Entrez le Professeur" [(ngModel)]="professeur" [ngModelOptions]="{ standalone: true }">
+                            </div>
+
+                            <div class="input-field">
+                                <label>Tuteur</label>
+                                <input type="text" placeholder="Entrez le Tuteur" [(ngModel)]="tuteur" [ngModelOptions]="{ standalone: true }">
+                            </div>
+
+                            <span class="title">Details de l'entreprise</span>
+
+                            <div class="input-field">
+                                <label>Nom de l'entreprise</label>
+                                <input type="text" placeholder="Entrez le Nom de l'entreprise" [(ngModel)]="nomEntreprise" [ngModelOptions]="{ standalone: true }">
+                            </div>
+
+
+                            <div class="input-field">
+                                <label>raison sociale</label>
+                                <input type="text" placeholder="Entrez la raison sociale" [(ngModel)]="raisonSociale" [ngModelOptions]="{ standalone: true }">
+                            </div>
+
+                            <div class="input-field">
+                                <label>forme juridique</label>
+                                <input type="text" placeholder="Entrez la forme juridique" [(ngModel)]="formeJuridique" [ngModelOptions]="{ standalone: true }">
+                            </div>
+
+                            <div class="input-field">
+                                <label>Adresse de l'entreprise</label>
+                                <input type="text" placeholder="Entrez l'Adresse de l'entreprise" [(ngModel)]="adresseEntreprise" [ngModelOptions]="{ standalone: true }">
+                            </div>
+
+                            <div class="input-field">
+                                <label>numéro de telephone standard</label>
+                                <input type="text" placeholder="Entrez numéro de telephone standard" [(ngModel)]="numTelStandard" [ngModelOptions]="{ standalone: true }">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details family">
+                    <span class="title"></span>
+
+                    <div class="buttons">
+                        <button class="sumbit" (click)="onSubmit()">
+                            <span class="btnText">Submit</span>
+                            <i class="uil uil-navigator"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+    </div>
+
+
+
+</div></div>
+
+</body>

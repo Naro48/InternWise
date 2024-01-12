@@ -17,6 +17,6 @@ export class AddStageComponent {
   constructor(private router : Router){}
 
   OnSubmit(){
-    this.router.navigate(['/creation']);
+    this.router.navigate(['/creation/stage']);
   }
 }

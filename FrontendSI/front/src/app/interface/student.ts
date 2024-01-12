@@ -6,8 +6,7 @@ export interface Student {
     adresse: string;
     sexe: string;
     date_naissance: Date;
-    Tel: number;
+    Tel: string;
     mention: string;
     AnneePromo: number;
-
 }
