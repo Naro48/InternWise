@@ -68,5 +68,10 @@ public class EtudiantImpl implements EtudiantInt{
         return etudiantRepo.findAll();
     }
 
+    @Override
+    public List<EtudiantEntity> searchByName(String nom) {
+        return etudiantRepo.searchByName(nom);
+    }
+
 
 }
